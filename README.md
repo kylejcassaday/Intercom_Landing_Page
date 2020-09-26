@@ -16,4 +16,4 @@ Thus, in the stylesheet of this project, I only use:
 
     Landing page design courtesy of intercom.com.
 
-    HTML and CSS courtesy of me :)
+    HTML, CSS and photoshop mock up slicing courtesy of me :)
