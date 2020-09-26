@@ -1,0 +1,370 @@
+            /* In this styleheet, I challenged myself to style an entire landing page without the use of IDs and Classes.
+            ** The exercise was intended to expand my awareness of rare css selectors and think more in terms of element selectiion by utilizing the DOM.
+            ** In practice, however, coding this way is frusterating and impractical. 
+            ** Selecting elements inside of element inside of elements is confusing and unnecessarily time consuming. 
+            ** I had fun though :)
+            
+            ** Thus, in this stylesheet, I only use:
+
+                * universal selectors
+                * type selectors
+                * grouping selectors (A, B)
+                * combinators (A + B, etc.)
+                * pseudo elements and classes ( :first-of-type, etc.)
+
+            */
+/* #################################################################### FOR MOBILE DEVICES #################################################################### */ 
+
+
+
+/* ********************************************** GENERAL ********************************************** */ 
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 1366px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 2px;
+    background-color: lightgrey;
+}
+
+header {
+    background-color: #4D9DE0;
+    display: block;
+    padding: 8px 5px;
+
+
+    img {
+        height: 30px;
+        width: 100px;
+        object-fit: cover;
+    }
+}
+
+section, footer {
+    padding: 25px;
+}
+
+p {
+    line-height: 25px;
+    padding: 25px 0;
+}
+
+h2 {
+    font-size: 35px;
+}
+
+a, p, span {
+    font-size: 18px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+
+/* ********************************************** SECTION 1 (HERO IMAGE SECTION) ********************************************** */ 
+
+section:first-of-type {
+
+    background-color: #4D9DE0;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+
+    > div { // hero section's main columns
+        columns: 1;
+    }
+    
+    
+    img:first-of-type { // hero image
+        width: 100%;
+    }
+
+    p:first-of-type { 
+        color: black;
+        margin-top: 50px;
+        font-weight: 700;
+        padding: 25px 0;
+        text-transform: uppercase;
+    }
+
+    blockquote {
+        margin: 0;
+        line-height: 35px;
+        
+        span {
+            font-size: 26px;
+        }
+
+        span:before, span:after {
+            font-size: 35px;
+            color: black;
+        }
+
+        span:before {
+            content: '\201C';
+        }
+        
+        span:after {
+            content: '\201D';
+        }
+    }
+
+    hr {
+        width: 75px;
+        margin: 25px auto;
+        position: relative;
+        top: 25px;
+
+    }
+
+     div:nth-child(2) { // right hero column
+        
+        div:first-of-type { // testimonials
+        
+            p { // name
+                padding-left: 10px;
+                padding-top: 35px;
+                text-transform: uppercase;
+            }
+
+            img:first-of-type { // man
+                    width: 150px;
+                    float: left;
+            }
+
+            img:nth-of-type(2) { // slack
+                height: 35px;
+                position: relative;
+                bottom: 40px;
+                right: 10px;
+            }
+        }
+
+        > img { // message icon 
+            padding: 25px 0;
+            width: 100px;
+            float: right;
+        }
+
+        div:nth-of-type(2) { // file button
+
+            border: 1px solid #252525;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 175px auto 25px auto;
+            width: 100%;
+
+            p {
+                padding: 0;
+                margin: 15px 0 0 0;
+                text-align: center;
+            }
+            
+            img {
+                display: block;
+                width: 75px;
+                margin: 0 auto;
+
+            } 
+            
+        }
+
+    }
+}
+
+
+/* ********************************************** SECTION 2 (GET YOUR FREE BOOK) ********************************************** */ 
+
+section:nth-of-type(2) { // second section
+
+    background-color: #212B3B;
+    color: #f0f0f0;
+    text-align: center;
+    padding-bottom: 0;
+
+    h2 {
+        color: white;
+    }
+
+    a {
+        text-decoration: none;
+        padding: 10px 25px;
+        display: block;
+        letter-spacing: 0;
+        font-size: 16px;
+    }
+
+    a:first-of-type {
+        background-color: white;
+        color: black;
+        border-radius: 10px 10px 0 0;
+        padding: 5px;
+    }
+
+    a:nth-of-type(2) {
+        background-color: #69CB95;
+        color: white;
+        border-radius: 0 0 10px 10px;
+        text-transform: uppercase;
+        padding: 5px;
+    }
+
+    p, span {
+        color: grey;
+    }
+
+    span, input {
+        position: relative;
+        top: 25px;
+    }
+
+    span {
+        margin-bottom: 25px;
+        margin-left: 10px;
+    }
+
+    img {
+        width: 100%;
+        padding-top: 50px;
+    }
+}
+
+
+/* ********************************************** FOOTER SECTION ********************************************** */ 
+
+footer {
+
+    background-color: #2D4253;
+    color: grey;
+    text-align: center;
+
+    p {
+        padding-top: 0;
+    }
+
+    img {
+        display: block;
+        margin: 12.5px auto;
+    }
+}
+
+
+/* #################################################################### FOR LARGER DEVICES #################################################################### */ 
+
+/* ********************************************** MEDIA QUERIES FOR THE IPAD AND SIMULAR DEVICES ********************************************** */ 
+
+// for 
+@media only screen and (min-width: 768px) {
+
+    section, footer {
+        padding: 100px;
+    }
+
+    header {
+
+        img {
+            width: 200px;
+            height: 70px;
+        }
+    }
+
+    section:first-of-type { // hero section
+        div:nth-child(2) { // right column
+        
+            div:first-of-type { // testimonials
+
+                p {
+                    padding-top: 50px;
+                }
+                img:nth-of-type(2) {
+                    width: 150px;
+                    height: auto;
+                }
+
+            }
+        }
+    }
+    
+    section:nth-of-type(2) { // second section
+
+        div {
+            padding: 25px;
+        }
+
+        a {
+            padding: 10px 25px;
+            display: inline;
+        }
+
+        a:first-of-type {
+            border-radius: 40px 0 0 40px;
+            padding: 15px 30px;
+        }
+
+        a:nth-of-type(2) {
+            border-radius: 0 40px 40px 0;
+            padding: 15px 60px;
+        }
+
+        img {
+            width: 500px;
+            margin: 0 auto;
+            display: block;
+        }
+    }
+
+    footer {
+
+        p {
+            margin-top: 0;
+            margin-bottom: 50px;
+        }
+
+        div {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+}
+
+
+/* ********************************************** MEDIA QUERIES FOR THE IPAD PRO AND DESKTOP COMPUTERS ********************************************** */ 
+
+@media only screen and (min-width: 1024px) {
+
+    hr {
+        display: none;
+    }
+
+    footer {
+        font-size: 4px;
+    }
+
+    section:first-of-type { // first section
+        display: flex;
+        padding: 25px;
+
+        > div:first-of-type { // left hero img column
+            width: 60%;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        >div:nth-of-type(2){ // right hero img column
+            width: 40%;
+            height: 100%;
+
+        }
+
+    }
+
+}
