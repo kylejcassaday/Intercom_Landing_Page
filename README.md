@@ -1,8 +1,8 @@
 For this Project, I challenged myself to style an entire landing page without the use of IDs and Classes.
 The exercise was intended to expand my awareness of rare css selectors and think more in terms of element selectiion by utilizing the DOM.
-In practice, however, coding this way is frusterating and impractical. 
-Selecting elements inside of element inside of elements is confusing and unnecessarily time consuming. 
-I had fun though :)
+In practice, however, coding this way is frustrating and impractical. 
+Selecting elements inside of elements inside of elements is confusing and unnecessarily time consuming. 
+I had fun though and the landing page looks great! :)
             
 Thus, in the stylesheet of this project, I only use:
 
